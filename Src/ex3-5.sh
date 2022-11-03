@@ -1,25 +1,21 @@
 #!/bin/bash
 
-myFunction () {
-echo "Entering a function"
-	ls
-}
-
-echo "Start the program"
-echo "Entering the Function"
-myFunction
-echo "Exit the program"
-
-
 command=$1
+length=`echo "${#command}"`
+
 myFunction () {
-	$command
-}
-
 echo "Start the program"
-echo "Entering the Function"
-myFunction
+echo "Entering a function"
+	if [ $length -eq 0 ]; then #length==0, command non exist
+		default="ls"
+		echo $default
+		eval $default
+		
+	else                       #length!=0, command exist.
+		$command
+	fi
 echo "Exit the program"
-
+}
+myFunction
 
 exit 0
