@@ -14,4 +14,3 @@ tar -czvf files.tar file0.txt file1.txt file2.txt file3.txt file4.txt
 
 mkdir new_files
 tar -xvf files.tar -C /home/jylee/$fname/new_files
-mv files.tar new_files
